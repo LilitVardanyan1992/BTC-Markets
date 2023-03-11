@@ -7,6 +7,10 @@ $footerBlack: #3F3F46;
 $primary: #4CFDC7;
 $red: #F43F5E;
 $gray: #10B981;
+$darkGray: #71717A;
+$lightGray: #A1A1AA;
+$tablePadding: 16px 0px;
+$grayBorder: #F4F4F5;
 
 $tablet: 1024px;
 $mobileL: 768px;
@@ -268,6 +272,127 @@ header {
   }
 }
 
+main {
+  min-height: 1500px;
+  .markets__section {
+    .markets {
+      padding: 32px;
+      margin-top: 32px;
+      .markets__nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        h4 {
+          color: $firstBlack;
+          font-weight: 400;
+          font-size: 14px;
+          &.active {
+            color: $darkGray;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .markets__table {
+        overflow-y: hidden;
+        overflow-x: auto;
+        table {
+          border-collapse: collapse;
+          width: 1072px;
+          box-sizing: content-box;
+          tbody {
+            tr {
+              border-bottom: 1px solid $grayBorder;
+              th {
+                border-top: 1px solid $grayBorder;
+                padding: $tablePadding;
+                text-align: left;
+                color: $firstBlack;
+                font-weight: 400;
+                
+               
+               
+              }
+
+              td {
+                padding: $tablePadding;
+                color: $firstBlack;
+                font-weight: 400;
+                &:nth-child(3) {
+                  span {
+                    &.down {
+                      color: $gray;
+                    }
+                    &.up {
+                      color: $red;
+                    }
+                  }
+                }
+
+                
+                div {
+  
+                }
+                span {
+                  &.aud {
+                    color: $lightGray;
+                    font-size: 14px;
+                  }
+  
+                }
+                &:nth-child(1), &:nth-child(3) {
+                  display: flex;
+                  align-items: center;
+                  gap: 16px;
+                }
+
+                a {
+                  display: block;
+                  text-decoration: none;
+                  padding: $tablePadding;
+                  background: $primary;
+                  border-radius: $br;
+                  color: $greenBlack;
+                  cursor: pointer;
+                  text-align: center;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+
+      }
+
+      .markets__view__all {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 22px;
+        a {
+          color: $firstBlack;
+          text-decoration: none;
+        }
+      }
+      @media screen and (max-width: $mobileXS) {
+        .markets__nav {
+          flex-wrap: wrap;
+          gap: 16px;
+          h4 {
+            width: 100%;
+            text-align: center;
+          }
+        }
+        .markets__view__all  {
+          flex-wrap: wrap;
+        }
+        
+      }
+    }
+  }
+}
 
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
