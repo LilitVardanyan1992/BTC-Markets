@@ -16,7 +16,7 @@ $tablet: 1024px;
 $mobileL: 768px;
 $mobileM: 580px;
 $mobileS: 480px;
-$mobileXS: 380px; 
+$mobileXS: 380px;
 
 $br: 4px;
 
@@ -102,6 +102,7 @@ nav {
 
     @media screen and (max-width: 890px) {
       .logo {
+
         svg {
           width: 152px;
           height: 16px;
@@ -183,8 +184,10 @@ header {
     align-items: center;
     padding-top: 130px;
     gap: 64px;
+
     .header__left {
       max-width: 659px;
+
       h1 {
         font-size: min(71px, max(40px + 2vw));
         font-weight: 400;
@@ -204,6 +207,7 @@ header {
         display: flex;
         gap: 16px;
         margin-bottom: 16px;
+
         a {
           display: block;
           padding: 9px 33px;
@@ -214,6 +218,7 @@ header {
             background: $primary;
             color: $greenBlack;
           }
+
           &:nth-child(2) {
             background: transparent;
             border: 1px solid $firstBlack;
@@ -235,6 +240,7 @@ header {
     @media screen and (max-width: $mobileL) {
       padding-top: 63px;
     }
+
     @media screen and (max-width: $mobileS) {
       padding-top: 32.5px;
     }
@@ -245,22 +251,26 @@ header {
       text-align: center;
 
       .header__left {
-        .header__left__btns, .header__left__stars {
+
+        .header__left__btns,
+        .header__left__stars {
           justify-content: center;
         }
       }
     }
 
     @media screen and (max-width: $mobileS) {
-      
+
       .header__left {
         .header__left__btns {
           flex-wrap: wrap;
+
           a {
             width: 100%;
           }
         }
       }
+
       .header__right {
         .header__right__img {
           img {
@@ -274,19 +284,23 @@ header {
 
 main {
   min-height: 1500px;
+
   .markets__section {
     .markets {
       padding: 32px;
       margin-top: 32px;
+
       .markets__nav {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 32px;
+
         h4 {
           color: $firstBlack;
           font-weight: 400;
           font-size: 14px;
+
           &.active {
             color: $darkGray;
             cursor: pointer;
@@ -297,51 +311,53 @@ main {
       .markets__table {
         overflow-y: hidden;
         overflow-x: auto;
+
         table {
           border-collapse: collapse;
-          width: 1072px;
+          width: 100%;
           box-sizing: content-box;
+
           tbody {
             tr {
               border-bottom: 1px solid $grayBorder;
+
               th {
                 border-top: 1px solid $grayBorder;
                 padding: $tablePadding;
                 text-align: left;
                 color: $firstBlack;
                 font-weight: 400;
-                
-               
-               
               }
 
               td {
                 padding: $tablePadding;
                 color: $firstBlack;
                 font-weight: 400;
+
                 &:nth-child(3) {
                   span {
+
                     &.down {
                       color: $gray;
                     }
+
                     &.up {
                       color: $red;
                     }
                   }
                 }
 
-                
-                div {
-  
-                }
                 span {
+
                   &.aud {
                     color: $lightGray;
                     font-size: 14px;
                   }
-  
+
                 }
-                &:nth-child(1), &:nth-child(3) {
+
+                &:nth-child(1),
+                &:nth-child(3) {
                   display: flex;
                   align-items: center;
                   gap: 16px;
@@ -361,8 +377,11 @@ main {
               }
             }
           }
-        }
 
+          @media screen and (max-width: $mobileL) {
+            width: 800px;
+          }
+        }
       }
 
       .markets__view__all {
@@ -371,24 +390,329 @@ main {
         justify-content: center;
         gap: 16px;
         margin-top: 22px;
+
         a {
           color: $firstBlack;
           text-decoration: none;
         }
       }
-      @media screen and (max-width: $mobileXS) {
+
+      @media screen and (max-width: 460px) {
         .markets__nav {
           flex-wrap: wrap;
           gap: 16px;
+
           h4 {
             width: 100%;
             text-align: center;
           }
         }
-        .markets__view__all  {
+
+        .markets__view__all {
           flex-wrap: wrap;
+
+          svg:nth-child(1) {
+            width: 100%;
+          }
         }
-        
+
+      }
+    }
+
+    .why__btc-markets {
+      margin-top: 64px;
+
+      h2 {
+        text-align: center;
+        font-weight: 400;
+        margin: 0;
+        font-size: min(48px, max(24px + 2vw));
+      }
+
+      .wbm__items {
+        display: flex;
+        justify-content: center;
+        margin-top: 128px;
+        gap: 64px;
+        margin-top: 128px;
+
+        .wbm__item {
+          text-align: center;
+          max-width: 250px;
+
+          .wbm__icon {
+            margin-bottom: 32px;
+          }
+
+          h4 {
+            margin: 0;
+            color: $firstBlack;
+            font-weight: 400;
+            font-style: 20px;
+          }
+
+          p {
+            color: $secondBlack;
+            line-height: 24px;
+            letter-spacing: 0.2px;
+          }
+        }
+
+        @media screen and (max-width: $mobileL) {
+          flex-wrap: wrap;
+          margin-top: 64px;
+        }
+      }
+    }
+  }
+
+  .trade__section {
+    margin-top: 174px;
+
+    h4 {
+      line-height: 20px;
+      font-weight: 400;
+      color: $firstBlack;
+      font-size: 16px;
+    }
+
+    .trade__section-block {
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+
+      .trade__section-left {
+        flex: 1 1 550px;
+
+        h2 {
+          font-size: min(40px, max(20px + 2vw));
+          font-weight: 400;
+          color: $firstBlack;
+        }
+
+        .trade__items {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 64px;
+          gap: 32px;
+
+          .trade__item {
+            flex: 1 1 calc(100%/3);
+
+            h6 {
+              font-size: 16px;
+              color: $firstBlack;
+              font-weight: 400;
+              margin: 8px 0px 18px 0px;
+            }
+
+            p {
+              color: $secondBlack;
+              font-size: 15px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+
+      .trade__section-right {
+        flex: 1 1 550px;
+
+        .trade__section-right-img {
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      @media screen and (max-width: $tablet) {
+        flex-wrap: wrap;
+      }
+
+      @media screen and (max-width: $mobileM) {
+        .trade__section-left {
+          h2 {
+            text-align: center;
+          }
+
+          .trade__items {
+            .trade__item {
+              flex: 1 1 100%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .trade__section2 {
+    margin-top: 174px;
+
+    .trade__section2-block {
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+
+      .trade__section2-left {
+        flex: 1 1 550px;
+
+        .trade__section2-left-img {
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      .trade__section2-right {
+        flex: 1 1 550px;
+
+        h4 {
+          color: $firstBlack;
+          text-transform: uppercase;
+          line-height: 20px;
+          font-weight: 400;
+        }
+
+        h2 {
+          font-size: min(40px, max(20px + 2vw));
+          font-weight: 400;
+          color: $firstBlack;
+        }
+
+        .trade2__items {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 64px;
+          gap: 32px;
+
+          .trade2__item {
+            flex: 1 1 calc(100%/3);
+
+            h6 {
+              font-size: 16px;
+              color: $firstBlack;
+              font-weight: 400;
+              margin: 8px 0px 18px 0px;
+            }
+
+            p {
+              color: $secondBlack;
+              font-size: 15px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: $tablet) {
+        flex-wrap: wrap;
+      }
+
+      @media screen and (max-width: $mobileM) {
+        .trade__section2-right {
+          h2 {
+            text-align: center;
+          }
+
+          .trade2__items {
+            .trade2__item {
+              flex: 1 1 100%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  .vip__program__section {
+    margin-top: 128px;
+
+    .vip__program-block {
+      text-align: center;
+
+      h4 {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+        color: $firstBlack;
+      }
+
+      h2 {
+        font-size: min(40px, max(20px + 2vw));
+        font-weight: 400;
+        color: $firstBlack;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 24px;
+        color: $secondBlack;
+        margin-bottom: 32px;
+      }
+
+      .vip__program-items {
+        display: flex;
+        gap: 150px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 64px;
+
+        .vip__program-item {
+          display: flex;
+          gap: 16px;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: $firstBlack;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        border: 1px solid $firstBlack;
+        margin-bottom: 48px;
+        padding: 9px 35px;
+        border-radius: 4px;
+      }
+
+      .vip__program-img {
+        img {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: $mobileL) {
+        p {
+          margin-bottom: 10px;
+        }
+
+        .vip__program-items {
+          gap: 32px;
+          margin-bottom: 20px;
+        }
+
+        a {
+          margin-bottom: 24px;
+        }
+      }
+
+      @media screen and (max-width: $mobileM) {
+        .vip__program-items {
+          flex-wrap: wrap;
+          gap: 0px;
+
+          .vip__program-item {
+            flex: 1 1 100%;
+          }
+        }
+
       }
     }
   }

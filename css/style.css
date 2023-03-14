@@ -175,7 +175,8 @@ header .header .header__left .header__left__stars {
     justify-content: center;
     text-align: center;
   }
-  header .header .header__left .header__left__btns, header .header .header__left .header__left__stars {
+  header .header .header__left .header__left__btns,
+  header .header .header__left .header__left__stars {
     justify-content: center;
   }
 }
@@ -219,7 +220,7 @@ main .markets__section .markets .markets__table {
 }
 main .markets__section .markets .markets__table table {
   border-collapse: collapse;
-  width: 1072px;
+  width: 100%;
   box-sizing: content-box;
 }
 main .markets__section .markets .markets__table table tbody tr {
@@ -263,6 +264,11 @@ main .markets__section .markets .markets__table table tbody tr td a {
   text-align: center;
   font-size: 12px;
 }
+@media screen and (max-width: 768px) {
+  main .markets__section .markets .markets__table table {
+    width: 800px;
+  }
+}
 main .markets__section .markets .markets__view__all {
   display: flex;
   align-items: center;
@@ -274,7 +280,7 @@ main .markets__section .markets .markets__view__all a {
   color: #18181B;
   text-decoration: none;
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 460px) {
   main .markets__section .markets .markets__nav {
     flex-wrap: wrap;
     gap: 16px;
@@ -285,6 +291,246 @@ main .markets__section .markets .markets__view__all a {
   }
   main .markets__section .markets .markets__view__all {
     flex-wrap: wrap;
+  }
+  main .markets__section .markets .markets__view__all svg:nth-child(1) {
+    width: 100%;
+  }
+}
+main .markets__section .why__btc-markets {
+  margin-top: 64px;
+}
+main .markets__section .why__btc-markets h2 {
+  text-align: center;
+  font-weight: 400;
+  margin: 0;
+  font-size: min(48px, max(24px + 2vw));
+}
+main .markets__section .why__btc-markets .wbm__items {
+  display: flex;
+  justify-content: center;
+  margin-top: 128px;
+  gap: 64px;
+  margin-top: 128px;
+}
+main .markets__section .why__btc-markets .wbm__items .wbm__item {
+  text-align: center;
+  max-width: 250px;
+}
+main .markets__section .why__btc-markets .wbm__items .wbm__item .wbm__icon {
+  margin-bottom: 32px;
+}
+main .markets__section .why__btc-markets .wbm__items .wbm__item h4 {
+  margin: 0;
+  color: #18181B;
+  font-weight: 400;
+  font-style: 20px;
+}
+main .markets__section .why__btc-markets .wbm__items .wbm__item p {
+  color: #27272A;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+}
+@media screen and (max-width: 768px) {
+  main .markets__section .why__btc-markets .wbm__items {
+    flex-wrap: wrap;
+    margin-top: 64px;
+  }
+}
+main .trade__section {
+  margin-top: 174px;
+}
+main .trade__section h4 {
+  line-height: 20px;
+  font-weight: 400;
+  color: #18181B;
+  font-size: 16px;
+}
+main .trade__section .trade__section-block {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+main .trade__section .trade__section-block .trade__section-left {
+  flex: 1 1 550px;
+}
+main .trade__section .trade__section-block .trade__section-left h2 {
+  font-size: min(40px, max(20px + 2vw));
+  font-weight: 400;
+  color: #18181B;
+}
+main .trade__section .trade__section-block .trade__section-left .trade__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 64px;
+  gap: 32px;
+}
+main .trade__section .trade__section-block .trade__section-left .trade__items .trade__item {
+  flex: 1 1 33.3333333333%;
+}
+main .trade__section .trade__section-block .trade__section-left .trade__items .trade__item h6 {
+  font-size: 16px;
+  color: #18181B;
+  font-weight: 400;
+  margin: 8px 0px 18px 0px;
+}
+main .trade__section .trade__section-block .trade__section-left .trade__items .trade__item p {
+  color: #27272A;
+  font-size: 15px;
+  line-height: 24px;
+}
+main .trade__section .trade__section-block .trade__section-right {
+  flex: 1 1 550px;
+}
+main .trade__section .trade__section-block .trade__section-right .trade__section-right-img img {
+  width: 100%;
+}
+@media screen and (max-width: 1024px) {
+  main .trade__section .trade__section-block {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 580px) {
+  main .trade__section .trade__section-block .trade__section-left h2 {
+    text-align: center;
+  }
+  main .trade__section .trade__section-block .trade__section-left .trade__items .trade__item {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
+main .trade__section2 {
+  margin-top: 174px;
+}
+main .trade__section2 .trade__section2-block {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+main .trade__section2 .trade__section2-block .trade__section2-left {
+  flex: 1 1 550px;
+}
+main .trade__section2 .trade__section2-block .trade__section2-left .trade__section2-left-img img {
+  width: 100%;
+}
+main .trade__section2 .trade__section2-block .trade__section2-right {
+  flex: 1 1 550px;
+}
+main .trade__section2 .trade__section2-block .trade__section2-right h4 {
+  color: #18181B;
+  text-transform: uppercase;
+  line-height: 20px;
+  font-weight: 400;
+}
+main .trade__section2 .trade__section2-block .trade__section2-right h2 {
+  font-size: min(40px, max(20px + 2vw));
+  font-weight: 400;
+  color: #18181B;
+}
+main .trade__section2 .trade__section2-block .trade__section2-right .trade2__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 64px;
+  gap: 32px;
+}
+main .trade__section2 .trade__section2-block .trade__section2-right .trade2__items .trade2__item {
+  flex: 1 1 33.3333333333%;
+}
+main .trade__section2 .trade__section2-block .trade__section2-right .trade2__items .trade2__item h6 {
+  font-size: 16px;
+  color: #18181B;
+  font-weight: 400;
+  margin: 8px 0px 18px 0px;
+}
+main .trade__section2 .trade__section2-block .trade__section2-right .trade2__items .trade2__item p {
+  color: #27272A;
+  font-size: 15px;
+  line-height: 24px;
+}
+@media screen and (max-width: 1024px) {
+  main .trade__section2 .trade__section2-block {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 580px) {
+  main .trade__section2 .trade__section2-block .trade__section2-right h2 {
+    text-align: center;
+  }
+  main .trade__section2 .trade__section2-block .trade__section2-right .trade2__items .trade2__item {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
+main .vip__program__section {
+  margin-top: 128px;
+}
+main .vip__program__section .vip__program-block {
+  text-align: center;
+}
+main .vip__program__section .vip__program-block h4 {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #18181B;
+}
+main .vip__program__section .vip__program-block h2 {
+  font-size: min(40px, max(20px + 2vw));
+  font-weight: 400;
+  color: #18181B;
+}
+main .vip__program__section .vip__program-block p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: #27272A;
+  margin-bottom: 32px;
+}
+main .vip__program__section .vip__program-block .vip__program-items {
+  display: flex;
+  gap: 150px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+main .vip__program__section .vip__program-block .vip__program-items .vip__program-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+main .vip__program__section .vip__program-block a {
+  display: inline-block;
+  text-decoration: none;
+  color: #18181B;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  border: 1px solid #18181B;
+  margin-bottom: 48px;
+  padding: 9px 35px;
+  border-radius: 4px;
+}
+main .vip__program__section .vip__program-block .vip__program-img img {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  main .vip__program__section .vip__program-block p {
+    margin-bottom: 10px;
+  }
+  main .vip__program__section .vip__program-block .vip__program-items {
+    gap: 32px;
+    margin-bottom: 20px;
+  }
+  main .vip__program__section .vip__program-block a {
+    margin-bottom: 24px;
+  }
+}
+@media screen and (max-width: 580px) {
+  main .vip__program__section .vip__program-block .vip__program-items {
+    flex-wrap: wrap;
+    gap: 0px;
+  }
+  main .vip__program__section .vip__program-block .vip__program-items .vip__program-item {
+    flex: 1 1 100%;
   }
 }
 
