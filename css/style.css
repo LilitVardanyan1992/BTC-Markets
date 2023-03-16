@@ -31,13 +31,20 @@ nav .nav {
   justify-content: space-between;
   min-height: 80px;
 }
-nav .nav .mobile__menu__btn {
+nav .nav .logo .full__logo {
+  display: block;
+}
+nav .nav .logo .mobile__logo {
   display: none;
 }
 nav .nav .nav__items {
   display: flex;
-  gap: 32px;
   align-items: center;
+  gap: 32px;
+}
+nav .nav .nav__items .mobile__menu__btn {
+  display: none;
+  cursor: pointer;
 }
 nav .nav .nav__items .nav__menu {
   display: flex;
@@ -65,15 +72,10 @@ nav .nav .nav__items .nav__btns button#login {
   border: 1px solid #18181B;
   background: transparent;
 }
-nav .nav .nav__items .nav__btns button#login svg {
-  display: none;
-}
 nav .nav .nav__items .nav__btns button#signup {
   border: 1px solid #4CFDC7;
   background: #4CFDC7;
-}
-nav .nav .nav__items .nav__btns button#signup svg {
-  display: none;
+  color: #01271C;
 }
 @media screen and (max-width: 890px) {
   nav .nav .logo svg {
@@ -88,35 +90,22 @@ nav .nav .nav__items .nav__btns button#signup svg {
   }
 }
 @media screen and (max-width: 768px) {
-  nav .nav .logo svg g path:nth-child(-n+10) {
+  nav .nav .logo svg {
+    width: unset;
+    height: unset;
+  }
+  nav .nav .logo .full__logo {
     display: none;
+  }
+  nav .nav .logo .mobile__logo {
+    display: block;
+    width: 100%;
   }
   nav .nav .nav__items .nav__menu {
     display: none;
   }
   nav .nav .nav__items .mobile__menu__btn {
     display: block;
-  }
-}
-@media screen and (max-width: 580px) {
-  nav .nav .nav__items .nav__btns button#login {
-    border: none;
-  }
-  nav .nav .nav__items .nav__btns button#login svg {
-    display: block;
-  }
-  nav .nav .nav__items .nav__btns button#login span {
-    display: none;
-  }
-  nav .nav .nav__items .nav__btns button#signup {
-    border: none;
-    background: transparent;
-  }
-  nav .nav .nav__items .nav__btns button#signup svg {
-    display: block;
-  }
-  nav .nav .nav__items .nav__btns button#signup span {
-    display: none;
   }
 }
 
@@ -615,6 +604,276 @@ main .start__trading__section .start__trading .start__trading-stars {
   }
   main .start__trading__section .start__trading .start__trading-items .start__trading-item h6 {
     margin: 12px 0px;
+  }
+}
+main .tradeon__togo__section .tradeon__togo {
+  margin-top: 120px;
+  padding-left: 20px;
+}
+main .tradeon__togo__section .tradeon__togo h2 {
+  line-height: 48px;
+  font-size: min(48px, max(24px + 2vw));
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+main .tradeon__togo__section .tradeon__togo p {
+  max-width: 610px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #27272A;
+  margin-bottom: 32px;
+  padding-right: 20px;
+}
+main .tradeon__togo__section .tradeon__togo .tradeon__togo-items {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+main .tradeon__togo__section .tradeon__togo .tradeon__togo-items .tradeon__togo-item .tradeon__togo-item-img {
+  margin-bottom: 16px;
+}
+main .tradeon__togo__section .tradeon__togo .tradeon__togo-items .tradeon__togo-item .tradeon__togo-item-stars {
+  display: flex;
+  justify-content: space-between;
+}
+main .tradeon__togo__section .tradeon__togo .tradeon__togo-items .tradeon__togo-item .tradeon__togo-item-stars .stars {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
+@media screen and (max-width: 480px) {
+  main .tradeon__togo__section .tradeon__togo .tradeon__togo-items {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+main .tradeon__togo__section .tradeon__togo a {
+  font-weight: 400;
+  line-height: 20px;
+  color: #18181B;
+  text-decoration: none;
+}
+
+.cryptonews__section .crypto__news {
+  margin-top: 120px;
+}
+.cryptonews__section .crypto__news h3 {
+  font-weight: 400;
+  font-size: min(32px, max(16px + 2vw));
+  line-height: 40px;
+  text-align: center;
+  color: #18181B;
+  margin-bottom: 64px;
+}
+.cryptonews__section .crypto__news .crypto__news-items {
+  display: flex;
+  gap: 32px;
+  max-width: 1135px;
+  margin-bottom: 100px;
+}
+.cryptonews__section .crypto__news .crypto__news-items .crypto__news-item {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 33.33%;
+}
+.cryptonews__section .crypto__news .crypto__news-items .crypto__news-item .crypto__news-item-pic img {
+  width: 100%;
+}
+.cryptonews__section .crypto__news .crypto__news-items .crypto__news-item .crypto__news-item-about {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+  flex: 1 1 auto;
+}
+.cryptonews__section .crypto__news .crypto__news-items .crypto__news-item .crypto__news-item-about .crypto__news-item-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 200px;
+}
+.cryptonews__section .crypto__news .crypto__news-items .crypto__news-item .crypto__news-item-about .crypto__news-item-date h6 {
+  padding: 6px 8px;
+  background: #BDFFEB;
+  color: #18181B;
+  font-size: 12px;
+  line-height: 12px;
+}
+.cryptonews__section .crypto__news .crypto__news-items .crypto__news-item .crypto__news-item-about .crypto__news-item-date p {
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.cryptonews__section .crypto__news .crypto__news-items .crypto__news-item .crypto__news-item-about h4 {
+  font-weight: 400;
+  font-size: min(24px, max(12px + 2vw));
+  line-height: 30px;
+  color: #18181B;
+  flex: 1 1 auto;
+}
+.cryptonews__section .crypto__news .crypto__news-items .crypto__news-item .crypto__news-item-about .read__more {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  color: #18181B;
+  text-align: left;
+}
+@media screen and (max-width: 380px) {
+  .cryptonews__section .crypto__news .crypto__news-items .crypto__news-item .crypto__news-item-about .read__more {
+    margin-bottom: 0px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .cryptonews__section .crypto__news .crypto__news-items {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 0px;
+  }
+  .cryptonews__section .crypto__news .crypto__news-items .crypto__news-item {
+    flex: 0 1 370px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cryptonews__section .crypto__news .crypto__news-items {
+    margin-bottom: 50px;
+  }
+}
+.cryptonews__section .crypto__news a {
+  display: block;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #18181B;
+  text-decoration: none;
+  margin-bottom: 64px;
+  text-align: center;
+}
+@media screen and (max-width: 380px) {
+  .cryptonews__section .crypto__news a {
+    margin-bottom: 20px;
+  }
+}
+.cryptonews__section .crypto__news .crypto__news-socialmedia-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.cryptonews__section .crypto__news .crypto__news-socialmedia-group .crypto__news-socialmedia {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cryptonews__section .crypto__news .crypto__news-socialmedia-group .crypto__news-socialmedia h6 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #18181B;
+  margin: 0px;
+}
+@media screen and (max-width: 670px) {
+  .cryptonews__section .crypto__news .crypto__news-socialmedia-group {
+    flex-wrap: wrap;
+  }
+}
+
+.createaccount__section .create__account {
+  max-width: 440px;
+  margin: 120px 0px 64px 0px;
+}
+.createaccount__section .create__account h2 {
+  font-size: min(40px, max(20px + 2vw));
+  font-weight: 400;
+  color: #18181B;
+  line-height: 48px;
+  letter-spacing: 1px;
+  margin-bottom: 47px;
+}
+.createaccount__section .create__account button {
+  padding: 9px 33px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 0.1px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  background: #4CFDC7;
+  color: #01271C;
+  border: none;
+}
+
+footer .footer__wrapper .footer__logo {
+  margin-bottom: 32px;
+}
+footer .footer__wrapper .footer__row {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .footer__wrapper .footer__row .footer__col {
+  width: 20%;
+  padding: 0px 15px;
+}
+footer .footer__wrapper .footer__row .footer__col ul {
+  list-style: none;
+}
+footer .footer__wrapper .footer__row .footer__col ul li h5 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #18181B;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+footer .footer__wrapper .footer__row .footer__col ul li a {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 21px;
+  color: #3F3F46;
+  margin-bottom: 16px;
+}
+footer .footer__wrapper .footer__row .footer__col #footer__btns h5 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #18181B;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+footer .footer__wrapper .footer__row .footer__col #footer__btns .footer__btns-items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+footer .footer__wrapper .footer__row .footer__col #footer__btns .footer__btns-items #log-in,
+footer .footer__wrapper .footer__row .footer__col #footer__btns .footer__btns-items #sign-up {
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 21px;
+  color: #3F3F46;
+  border: none;
+  background: transparent;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+footer .footer__wrapper .footer__row .footer__col #footer__btns .footer__btns-items div {
+  margin-bottom: 16px;
+}
+@media screen and (max-width: 768px) {
+  footer .footer__wrapper .footer__row .footer__col {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 480px) {
+  footer .footer__wrapper .footer__row .footer__col {
+    width: 100%;
   }
 }
 

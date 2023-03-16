@@ -54,27 +54,32 @@ nav {
     align-items: center;
     justify-content: space-between;
     min-height: 80px;
+    .logo {
+      .full__logo {
+        display: block;
+      }
 
-    .mobile__menu__btn {
-      display: none;
+      .mobile__logo {
+        display: none;
+      }
     }
-
     .nav__items {
       display: flex;
-      gap: 32px;
       align-items: center;
+      gap: 32px;
+      .mobile__menu__btn {
+        display: none;
+        cursor: pointer;
+      }
 
       .nav__menu {
         display: flex;
         gap: 32px;
-
         li {
           list-style-type: none;
-
           a {
             color: $firstBlack;
             text-decoration: none;
-
           }
         }
       }
@@ -82,7 +87,6 @@ nav {
       .nav__btns {
         display: flex;
         gap: 8px;
-
         button {
           border-radius: $br;
           padding: 9px 17px;
@@ -93,29 +97,19 @@ nav {
           &#login {
             border: 1px solid $firstBlack;
             background: transparent;
-
-            svg {
-              display: none;
-            }
-
           }
 
           &#signup {
             border: 1px solid $primary;
             background: $primary;
-
-            svg {
-              display: none;
-            }
+            color: $greenBlack;
           }
-
         }
       }
     }
 
     @media screen and (max-width: 890px) {
       .logo {
-
         svg {
           width: 152px;
           height: 16px;
@@ -124,24 +118,28 @@ nav {
 
       .nav__items {
         gap: 16px;
-
         .nav__menu {
           gap: 16px;
         }
       }
     }
 
-    @media screen and (max-width: $mobileL) {
+    @media screen and (max-width: $mobileL)  {
       .logo {
         svg {
-          g {
-            path:nth-child(-n+10) {
-              display: none;
-            }
-          }
+          width: unset;
+          height: unset;
         }
-      }
 
+        .full__logo {
+          display: none;
+        }
+
+        .mobile__logo {
+					display: block;
+					width: 100%;
+				}
+      }
       .nav__items {
         .nav__menu {
           display: none;
@@ -149,41 +147,6 @@ nav {
 
         .mobile__menu__btn {
           display: block;
-        }
-      }
-    }
-
-    @media screen and (max-width: $mobileM) {
-      .nav__items {
-        .nav__btns {
-          button {
-
-            &#login {
-              border: none;
-
-              svg {
-                display: block;
-              }
-
-              span {
-                display: none;
-              }
-
-            }
-
-            &#signup {
-              border: none;
-              background: transparent;
-
-              svg {
-                display: block;
-              }
-
-              span {
-                display: none;
-              }
-            }
-          }
         }
       }
     }
@@ -276,6 +239,7 @@ header {
       text-align: center;
 
       .header__left {
+
         .header__left__btns,
         .header__left__stars {
           justify-content: center;
@@ -287,6 +251,7 @@ header {
       .header__left {
         .header__left__btns {
           flex-wrap: wrap;
+
           a {
             width: 100%;
           }
@@ -738,6 +703,7 @@ main {
       justify-content: center;
       align-items: center;
       margin-top: 120px;
+
       h2 {
         line-height: 48px;
         font-size: min(48px, max(24px + 2vw));
@@ -752,28 +718,30 @@ main {
         justify-content: center;
         gap: 48px;
         margin: 80px 0px 50px 0px;
-       .start__trading-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 33%;
-        h6 {
-          font-weight: 400;
-          font-size: 20px;
-          line-height: 25px;
-          text-align: center;
-          color: $firstBlack;
-          margin: 32px 0px 18px 0px;
-        }
 
-        p {
-          flex: 1 1 auto;
-          line-height: 24px;
-          text-align: center;
-          letter-spacing: 0.2px;
-          color: $secondBlack;
+        .start__trading-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 33%;
+
+          h6 {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 25px;
+            text-align: center;
+            color: $firstBlack;
+            margin: 32px 0px 18px 0px;
+          }
+
+          p {
+            flex: 1 1 auto;
+            line-height: 24px;
+            text-align: center;
+            letter-spacing: 0.2px;
+            color: $secondBlack;
+          }
         }
-       }
       }
 
       a {
@@ -794,8 +762,10 @@ main {
           flex-wrap: wrap;
           gap: 24px;
           margin-top: 32px;
+
           .start__trading-item {
             width: 100%;
+
             h6 {
               margin: 12px 0px;
             }
@@ -805,7 +775,317 @@ main {
     }
   }
 
+  .tradeon__togo__section {
+    .tradeon__togo {
+      margin-top: 120px;
+      padding-left: 20px;
+
+      h2 {
+        line-height: 48px;
+        font-size: min(48px, max(24px + 2vw));
+        letter-spacing: 1px;
+        font-weight: 400;
+      }
+
+      p {
+        max-width: 610px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+        color: $secondBlack;
+        margin-bottom: 32px;
+        padding-right: 20px;
+      }
+
+      .tradeon__togo-items {
+        display: flex;
+        gap: 32px;
+        margin-bottom: 32px;
+
+        .tradeon__togo-item {
+          .tradeon__togo-item-img {
+            margin-bottom: 16px;
+          }
+
+          .tradeon__togo-item-stars {
+            display: flex;
+            justify-content: space-between;
+
+            .stars {
+              display: flex;
+              justify-content: space-between;
+              gap: 4px;
+            }
+          }
+        }
+
+        @media screen and (max-width: $mobileS) {
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+      }
+
+      a {
+        font-weight: 400;
+        line-height: 20px;
+        color: $firstBlack;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+  .cryptonews__section {
+    .crypto__news {
+      margin-top: 120px;
+
+      h3 {
+        font-weight: 400;
+        font-size: min(32px, max(16px + 2vw));
+        line-height: 40px;
+        text-align: center;
+        color: $firstBlack;
+        margin-bottom: 64px;
+      }
+
+      .crypto__news-items {
+        display: flex;
+        gap: 32px;
+        max-width: 1135px;
+        margin-bottom: 100px;
+
+        .crypto__news-item {
+          display: flex;
+          flex-direction: column;
+          flex: 0 1 33.33%;
+
+          .crypto__news-item-pic {
+            img {
+              width: 100%;
+            }
+          }
+
+          .crypto__news-item-about {
+            display: flex;
+            flex-direction: column;
+            padding-left: 16px;
+            flex: 1 1 auto;
+
+            .crypto__news-item-date {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 16px;
+              width: 200px;
+
+              h6 {
+                padding: 6px 8px;
+                background: #BDFFEB;
+                color: $firstBlack;
+                font-size: 12px;
+                line-height: 12px;
+              }
+
+              p {
+                font-size: 12px;
+                line-height: 12px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+              }
+            }
+
+            h4 {
+              font-weight: 400;
+              font-size: min(24px, max(12px + 2vw));
+              line-height: 30px;
+              color: $firstBlack;
+              flex: 1 1 auto;
+            }
+
+            .read__more {
+              display: inline-block;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 20px;
+              text-decoration: none;
+              color: $firstBlack;
+              text-align: left;
+
+              @media screen and (max-width: $mobileXS) {
+                margin-bottom: 0px;
+              }
+            }
+          }
+        }
+
+        @media screen and (max-width: $tablet) {
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-bottom: 0px;
+
+          .crypto__news-item {
+            flex: 0 1 370px;
+          }
+        }
+
+        @media screen and (max-width: $mobileXS) {
+          margin-bottom: 50px;
+        }
+      }
+
+      a {
+        display: block;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+        color: $firstBlack;
+        text-decoration: none;
+        margin-bottom: 64px;
+        text-align: center;
+
+        @media screen and (max-width: $mobileXS) {
+          margin-bottom: 20px;
+        }
+      }
+
+      .crypto__news-socialmedia-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+
+        .crypto__news-socialmedia {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          h6 {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            color: $firstBlack;
+            margin: 0px;
+          }
+        }
+
+        @media screen and (max-width: 670px) {
+          flex-wrap: wrap;
+        }
+      }
+
+
+    }
+  }
+
+  .createaccount__section {
+    .create__account {
+      max-width: 440px;
+      margin: 120px 0px 64px 0px;
+      h2 {
+        font-size: min(40px, max(20px + 2vw));
+        font-weight: 400;
+        color: $firstBlack;
+        line-height: 48px;
+        letter-spacing: 1px;
+        margin-bottom: 47px;
+      }
+
+      button {
+        padding: 9px 33px;
+        border-radius: $br;
+        text-decoration: none;
+        letter-spacing: 0.1px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        background: $primary;
+        color: $greenBlack;
+        border: none;
+      }
+    }
+  }
+
+footer {
+  .footer__wrapper {
+    .footer__logo {
+      margin-bottom: 32px;
+    }
+
+    .footer__row {
+      display: flex;
+      flex-wrap: wrap;
+      .footer__col {
+        width: 20%;
+        padding: 0px 15px;
+        ul {
+          list-style: none;
+          li {
+            h5 {
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 12px;
+              color: $firstBlack;
+              text-transform: uppercase;
+              margin-bottom: 36px;
+            }
   
+            a {
+              display: inline-block;
+              text-decoration: none;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 21px;
+              color: $footerBlack;
+              margin-bottom: 16px;
+            }
+          }
+        }
+
+        #footer__btns {
+          h5 {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 12px;
+            color: $firstBlack;
+            text-transform: uppercase;
+            margin-bottom: 36px;
+          }
+  
+          .footer__btns-items {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+  
+            #log-in,
+            #sign-up {
+              display: block;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 21px;
+              color: $footerBlack;
+              border: none;
+              background: transparent;
+              margin-bottom: 16px;
+              cursor: pointer;
+            }
+  
+            div {
+              margin-bottom: 16px;
+            }
+          }
+        }
+
+        @media screen and (max-width: $mobileL) {
+          width: 50%;
+        }
+
+        @media screen and (max-width: $mobileS) {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 
