@@ -1,3 +1,16 @@
+main .start__trading__section .start__trading a {
+  display: inline-block;
+  padding: 9px 33px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 0.1px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  background: #4CFDC7;
+  color: #18181B;
+}
+
 @font-face {
   font-family: "regular";
   src: url(../fonts/regular.ttf);
@@ -159,8 +172,17 @@ header .header .header__left .header__left__stars {
           user-select: none;
   color: #27272A;
 }
+header .header .header__right .header__right__img img {
+  width: 100%;
+}
+@media screen and (max-width: 800px) {
+  header .header {
+    gap: 20px;
+  }
+}
 @media screen and (max-width: 768px) {
   header .header {
+    gap: 64px;
     padding-top: 63px;
   }
 }
@@ -185,9 +207,6 @@ header .header .header__left .header__left__stars {
     flex-wrap: wrap;
   }
   header .header .header__left .header__left__btns a {
-    width: 100%;
-  }
-  header .header .header__right .header__right__img img {
     width: 100%;
   }
 }
@@ -531,6 +550,71 @@ main .vip__program__section .vip__program-block .vip__program-img img {
   }
   main .vip__program__section .vip__program-block .vip__program-items .vip__program-item {
     flex: 1 1 100%;
+  }
+}
+main .start__trading__section .start__trading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+}
+main .start__trading__section .start__trading h2 {
+  line-height: 48px;
+  font-size: min(48px, max(24px + 2vw));
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: 400;
+}
+main .start__trading__section .start__trading .start__trading-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  margin: 80px 0px 50px 0px;
+}
+main .start__trading__section .start__trading .start__trading-items .start__trading-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+}
+main .start__trading__section .start__trading .start__trading-items .start__trading-item h6 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #18181B;
+  margin: 32px 0px 18px 0px;
+}
+main .start__trading__section .start__trading .start__trading-items .start__trading-item p {
+  flex: 1 1 auto;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  color: #27272A;
+}
+main .start__trading__section .start__trading .start__trading-stars {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: #27272A;
+  margin-top: 32px;
+}
+@media screen and (max-width: 768px) {
+  main .start__trading__section .start__trading .start__trading-items {
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 32px;
+  }
+  main .start__trading__section .start__trading .start__trading-items .start__trading-item {
+    width: 100%;
+  }
+  main .start__trading__section .start__trading .start__trading-items .start__trading-item h6 {
+    margin: 12px 0px;
   }
 }
 

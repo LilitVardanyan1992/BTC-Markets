@@ -20,6 +20,19 @@ $mobileXS: 380px;
 
 $br: 4px;
 
+%aLikeButton {
+  display: inline-block;
+  padding: 9px 33px;
+  border-radius: $br;
+  text-decoration: none;
+  letter-spacing: 0.1px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  background: $primary;
+  color: $firstBlack;
+}
+
 @font-face {
   font-family: "regular";
   src: url(../fonts/regular.ttf);
@@ -233,11 +246,23 @@ header {
         gap: 8px;
         user-select: none;
         color: $secondBlack;
-
       }
     }
 
+    .header__right {
+      .header__right__img {
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      gap: 20px;
+    }
+
     @media screen and (max-width: $mobileL) {
+      gap: 64px;
       padding-top: 63px;
     }
 
@@ -251,7 +276,6 @@ header {
       text-align: center;
 
       .header__left {
-
         .header__left__btns,
         .header__left__stars {
           justify-content: center;
@@ -260,20 +284,10 @@ header {
     }
 
     @media screen and (max-width: $mobileS) {
-
       .header__left {
         .header__left__btns {
           flex-wrap: wrap;
-
           a {
-            width: 100%;
-          }
-        }
-      }
-
-      .header__right {
-        .header__right__img {
-          img {
             width: 100%;
           }
         }
@@ -716,6 +730,82 @@ main {
       }
     }
   }
+
+  .start__trading__section {
+    .start__trading {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 120px;
+      h2 {
+        line-height: 48px;
+        font-size: min(48px, max(24px + 2vw));
+        letter-spacing: 1px;
+        text-align: center;
+        font-weight: 400;
+      }
+
+      .start__trading-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 48px;
+        margin: 80px 0px 50px 0px;
+       .start__trading-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 33%;
+        h6 {
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 25px;
+          text-align: center;
+          color: $firstBlack;
+          margin: 32px 0px 18px 0px;
+        }
+
+        p {
+          flex: 1 1 auto;
+          line-height: 24px;
+          text-align: center;
+          letter-spacing: 0.2px;
+          color: $secondBlack;
+        }
+       }
+      }
+
+      a {
+        @extend %aLikeButton;
+      }
+
+      .start__trading-stars {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        user-select: none;
+        color: $secondBlack;
+        margin-top: 32px;
+      }
+
+      @media screen and (max-width: $mobileL) {
+        .start__trading-items {
+          flex-wrap: wrap;
+          gap: 24px;
+          margin-top: 32px;
+          .start__trading-item {
+            width: 100%;
+            h6 {
+              margin: 12px 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  
 }
 
 
