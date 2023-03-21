@@ -40,6 +40,23 @@ $br: 4px;
 
 body {
   font-family: "regular", sans-serif;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 .container {
@@ -54,6 +71,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     min-height: 80px;
+
     .logo {
       .full__logo {
         display: block;
@@ -63,10 +81,12 @@ nav {
         display: none;
       }
     }
+
     .nav__items {
       display: flex;
       align-items: center;
       gap: 32px;
+
       .mobile__menu__btn {
         display: none;
         cursor: pointer;
@@ -75,11 +95,34 @@ nav {
       .nav__menu {
         display: flex;
         gap: 32px;
+
         li {
           list-style-type: none;
+
           a {
+            position: relative;
             color: $firstBlack;
             text-decoration: none;
+            transition: 0.3s;
+
+            &::before {
+              content: "";
+              width: 0%;
+              height: 3px;
+              background: $primary;
+              position: absolute;
+              bottom: -10px;
+              border-radius: $br;
+              transition: 0.3s;
+            }
+
+            &:hover {
+              color: $primary;
+
+              &::before {
+                width: 100%;
+              }
+            }
           }
         }
       }
@@ -87,22 +130,36 @@ nav {
       .nav__btns {
         display: flex;
         gap: 8px;
+
         button {
           border-radius: $br;
           padding: 9px 17px;
           cursor: pointer;
           color: $firstBlack;
           font-size: 12px;
+          transition: 0.3s;
 
           &#login {
             border: 1px solid $firstBlack;
             background: transparent;
+
+            &:hover {
+              background: $greenBlack;
+              border-color: $greenBlack;
+              color: #fff;
+            }
           }
 
           &#signup {
             border: 1px solid $primary;
             background: $primary;
             color: $greenBlack;
+
+            &:hover {
+              background: $greenBlack;
+              border-color: $greenBlack;
+              color: #fff;
+            }
           }
         }
       }
@@ -118,13 +175,14 @@ nav {
 
       .nav__items {
         gap: 16px;
+
         .nav__menu {
           gap: 16px;
         }
       }
     }
 
-    @media screen and (max-width: $mobileL)  {
+    @media screen and (max-width: $mobileL) {
       .logo {
         svg {
           width: unset;
@@ -136,10 +194,11 @@ nav {
         }
 
         .mobile__logo {
-					display: block;
-					width: 100%;
-				}
+          display: block;
+          width: 100%;
+        }
       }
+
       .nav__items {
         .nav__menu {
           display: none;
@@ -189,16 +248,29 @@ header {
           padding: 9px 33px;
           border-radius: $br;
           text-decoration: none;
+          transition: 0.3s;
 
           &:nth-child(1) {
             background: $primary;
             color: $greenBlack;
+
+            &:hover {
+              background: $greenBlack;
+              border-color: $greenBlack;
+              color: #fff;
+            }
           }
 
           &:nth-child(2) {
             background: transparent;
             border: 1px solid $firstBlack;
             color: $firstBlack;
+
+            &:hover {
+              background: $greenBlack;
+              border-color: $greenBlack;
+              color: #fff;
+            }
           }
         }
       }
@@ -291,6 +363,23 @@ main {
         overflow-y: hidden;
         overflow-x: auto;
 
+        &::-webkit-scrollbar {
+          width: 5px;
+          height: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: #888;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+
         table {
           border-collapse: collapse;
           width: 100%;
@@ -343,6 +432,7 @@ main {
                 }
 
                 a {
+                  width: 54px;
                   display: block;
                   text-decoration: none;
                   padding: $tablePadding;
@@ -352,6 +442,14 @@ main {
                   cursor: pointer;
                   text-align: center;
                   font-size: 12px;
+                  margin: 0px 0px 0px auto;
+                  transition: 0.3s;
+
+                  &:hover {
+                    background: $greenBlack;
+                    border-color: $greenBlack;
+                    color: #fff;
+                  }
                 }
               }
             }
@@ -658,7 +756,14 @@ main {
         border: 1px solid $firstBlack;
         margin-bottom: 48px;
         padding: 9px 35px;
-        border-radius: 4px;
+        border-radius: $br;
+        transition: 0.3s;
+
+        &:hover {
+          background: $greenBlack;
+          border-color: $greenBlack;
+          color: #fff;
+        }
       }
 
       .vip__program-img {
@@ -725,6 +830,14 @@ main {
           align-items: center;
           width: 33%;
 
+          .start__trading-item-icon {
+            padding: 16px;
+            background: #FCFBF8;
+            width: 72px;
+            height: 72px;
+            border-radius: $br;
+          }
+
           h6 {
             font-weight: 400;
             font-size: 20px;
@@ -746,6 +859,13 @@ main {
 
       a {
         @extend %aLikeButton;
+        transition: 0.3s;
+
+        &:hover {
+          background: $greenBlack;
+          border-color: $greenBlack;
+          color: #fff;
+        }
       }
 
       .start__trading-stars {
@@ -777,6 +897,10 @@ main {
 
   .tradeon__togo__section {
     .tradeon__togo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
       margin-top: 120px;
       padding-left: 20px;
 
@@ -788,7 +912,8 @@ main {
       }
 
       p {
-        max-width: 610px;
+        max-width: 800px;
+        text-align: center;
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
@@ -827,14 +952,17 @@ main {
       }
 
       a {
-        font-weight: 400;
-        line-height: 20px;
-        color: $firstBlack;
-        text-decoration: none;
+        @extend %aLikeButton;
+        transition: 0.3s;
+
+        &:hover {
+          background: $greenBlack;
+          border-color: $greenBlack;
+          color: #fff;
+        }
       }
     }
   }
-}
 
   .cryptonews__section {
     .crypto__news {
@@ -859,10 +987,22 @@ main {
           display: flex;
           flex-direction: column;
           flex: 0 1 33.33%;
+          box-shadow: 0px 0px 32px rgba(9, 24, 26, 0.1);
+          border-radius: 10px;
+          transition: 0.3s;
 
           .crypto__news-item-pic {
+            max-width: 370px;
+            max-height: 148px;
+            overflow: hidden;
+            border-radius: 10px;
+
             img {
+              display: block;
               width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: 0.3s;
             }
           }
 
@@ -878,6 +1018,7 @@ main {
               align-items: center;
               gap: 16px;
               width: 200px;
+              margin: 16px 0px 22px 0px;
 
               h6 {
                 padding: 6px 8px;
@@ -885,6 +1026,8 @@ main {
                 color: $firstBlack;
                 font-size: 12px;
                 line-height: 12px;
+                border-radius: $br;
+                margin: 0;
               }
 
               p {
@@ -892,6 +1035,7 @@ main {
                 line-height: 12px;
                 letter-spacing: 1px;
                 text-transform: uppercase;
+                margin: 0;
               }
             }
 
@@ -901,6 +1045,7 @@ main {
               line-height: 30px;
               color: $firstBlack;
               flex: 1 1 auto;
+              margin: 0px 0px 32px 0px;
             }
 
             .read__more {
@@ -912,8 +1057,22 @@ main {
               color: $firstBlack;
               text-align: left;
 
+              &:hover {
+                color: $primary;
+              }
+
               @media screen and (max-width: $mobileXS) {
                 margin-bottom: 0px;
+              }
+            }
+          }
+
+          &:hover {
+            box-shadow: 0px 0px 32px rgba(9, 24, 26, 0.3);
+
+            .crypto__news-item-pic {
+              img {
+                transform: scale(1.1);
               }
             }
           }
@@ -942,10 +1101,15 @@ main {
         color: $firstBlack;
         text-decoration: none;
         margin-bottom: 64px;
+        margin-top: 32px;
         text-align: center;
 
         @media screen and (max-width: $mobileXS) {
           margin-bottom: 20px;
+        }
+
+        &:hover {
+          text-decoration: underline;
         }
       }
 
@@ -960,12 +1124,18 @@ main {
           align-items: center;
           gap: 10px;
 
-          h6 {
+          a {
             font-weight: 400;
             font-size: 16px;
             line-height: 20px;
             color: $firstBlack;
             margin: 0px;
+            transition: 0.3s;
+
+            &:hover {
+              color: $primary;
+              text-decoration: none;
+            }
           }
         }
 
@@ -973,8 +1143,6 @@ main {
           flex-wrap: wrap;
         }
       }
-
-
     }
   }
 
@@ -982,6 +1150,7 @@ main {
     .create__account {
       max-width: 440px;
       margin: 120px 0px 64px 0px;
+
       h2 {
         font-size: min(40px, max(20px + 2vw));
         font-weight: 400;
@@ -1005,89 +1174,134 @@ main {
       }
     }
   }
+}
 
 footer {
-  .footer__wrapper {
-    .footer__logo {
-      margin-bottom: 32px;
-    }
+  margin-top: 128px;
+  .footer {
+    display: flex;
+    gap: 64px;
+    .footer__item {
+      flex: 1 1 227px;
 
-    .footer__row {
-      display: flex;
-      flex-wrap: wrap;
-      .footer__col {
-        width: 20%;
-        padding: 0px 15px;
-        ul {
+      h4 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 12px;
+        color: $firstBlack;
+        text-transform: uppercase;
+        margin-bottom: 36px;
+      }
+
+      ul {
+        li {
           list-style: none;
-          li {
-            h5 {
-              font-weight: 400;
-              font-size: 12px;
-              line-height: 12px;
-              color: $firstBlack;
-              text-transform: uppercase;
-              margin-bottom: 36px;
-            }
-  
-            a {
-              display: inline-block;
-              text-decoration: none;
-              font-weight: 400;
-              font-size: 12px;
-              line-height: 21px;
-              color: $footerBlack;
-              margin-bottom: 16px;
-            }
-          }
-        }
 
-        #footer__btns {
-          h5 {
+          a {
+            display: block;
+            text-decoration: none;
             font-weight: 400;
             font-size: 12px;
-            line-height: 12px;
-            color: $firstBlack;
-            text-transform: uppercase;
-            margin-bottom: 36px;
-          }
-  
-          .footer__btns-items {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-  
-            #log-in,
-            #sign-up {
-              display: block;
-              font-weight: 400;
-              font-size: 12px;
-              line-height: 21px;
-              color: $footerBlack;
-              border: none;
-              background: transparent;
-              margin-bottom: 16px;
-              cursor: pointer;
+            line-height: 21px;
+            color: $footerBlack;
+            margin-bottom: 16px;
+
+            svg {
+
+              path {
+                fill: $footerBlack;
+              }
             }
-  
-            div {
-              margin-bottom: 16px;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          img {
+            width: 120px;
+            height: 40px;
+            display: block;
+            margin-bottom: 8px;
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        ul {
+          li {
+            a {
+              display: flex;
+              align-items: center;
+              gap: 8px;
             }
           }
         }
+      }
 
-        @media screen and (max-width: $mobileL) {
-          width: 50%;
+      
+    }
+
+    @media screen and (max-width: $tablet) {
+      flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: $mobileL) {
+      text-align: center;
+
+      .footer__item {
+        flex: 1 1 100%;
+
+        li {
+          img {
+            margin: 0px auto 8px auto;
+          }
         }
 
-        @media screen and (max-width: $mobileS) {
-          width: 100%;
+        &:nth-child(4) {
+          li {
+            a {
+              justify-content: center;
+            }
+          }
         }
       }
     }
   }
-}
 
+  .footer__info {
+    text-align: center;
+    font-size: 14px;
+    color: $secondBlack;
+    margin-top: 128px;
+    margin-bottom: 64px;
+    p {
+      margin: 0;
+
+    }
+
+    .footer__info-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 16px;
+
+      @media screen and (max-width:$mobileL) {
+        flex-wrap: wrap;
+        gap: 16px;
+
+        p {
+          width: 100%;
+        }
+      }
+    }
+
+    .footer__info-bottom {
+      font-size: 12px;
+    }
+  }
+}
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -1311,7 +1525,6 @@ select {
  */
 
 
-
 /**
  * Remove the inner border and padding in Firefox.
  */
@@ -1407,7 +1620,6 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-
 
 
 /**
